@@ -58,3 +58,97 @@ var product = 5 * 6
 var quotient = 10 / 2
 var remainder = 10 % 3
 ```
+# For Loop 
+- The for loop is used to execute a block of code repeatedly until a specified condition is met. 
+```go
+for i := 0; i < 5; i++ {
+    fmt.Println(i)
+}
+```
+
+Note : There is no while loop in go , but we can use for loop as while loop as :
+```go
+i := 0
+for i < 5 {
+    fmt.Println(i)
+    i++
+}
+```
+And also we can use for loop as infinite loop as :
+```go
+for {
+    fmt.Println("Hello, World!")
+}
+```
+And there is concpt of range in for loop as :
+```go
+
+for i := range 3 {
+		fmt.Println(i)
+	}
+```
+# If Else
+- The if statement is used to execute a block of code if a specified condition is true. 
+```go
+if age >= 18 {
+    fmt.Println("You are an adult")
+} else {
+    fmt.Println("You are a minor")
+}
+```
+Note: The else statement is optional, and the else if statement can be used to check multiple conditions.
+```go
+if age >= 18 {
+    fmt.Println("You are an adult")
+} else if age >= 13 {
+    fmt.Println("You are a teenager")
+} else {
+    fmt.Println("You are a child")
+}
+```
+And we can also define the variable in if statement as :
+```go
+if age := 30; age >= 18 {
+    fmt.Println("You are an adult")
+}
+```
+
+# Switch Case
+- The switch statement is used to execute a block of code based on the value of a variable. 
+```go
+switch day {
+    case "Monday":
+        fmt.Println("Today is Monday")
+    case "Tuesday":
+        fmt.Println("Today is Tuesday")
+    default:
+        fmt.Println("Today is a different day")
+}
+```
+
+Note : The switch statement can also be used without a condition to create a switch case statement.
+```go
+switch {
+    case day == "Monday":
+        fmt.Println("Today is Monday")
+    case day == "Tuesday":
+        fmt.Println("Today is Tuesday")
+    default:
+        fmt.Println("Today is a different day")
+}
+```
+
+Also it can be used for type switch as :
+```go
+var x interface{} = 10
+
+switch x.(type) {
+    case int:
+        fmt.Println("x is an integer")
+    case string:
+        fmt.Println("x is a string")
+    default:
+        fmt.Println("x is another type")
+}
+```
+
