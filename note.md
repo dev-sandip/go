@@ -151,4 +151,25 @@ switch x.(type) {
         fmt.Println("x is another type")
 }
 ```
-
+# Arrays
+- An array is a collection of elements of the same type stored in contiguous memory locations.
+```go
+var numbers = [5]int{1, 2, 3, 4, 5}
+```
+- Note : The size of the array is fixed and cannot be changed once it is defined.
+- Note : The elements of the array can be accessed using the index of the element.
+```go
+numbers[0] = 10
+```
+- Note : The length of the array can be obtained using the len() function.
+```go
+len(numbers)
+```
+ Array can be declared in single line as :
+```go
+numbers:=[5]int{1, 2, 3, 4, 5}
+```
+And Two dimnesional array can be declared as :
+```go
+numbers:=[2][3]int{{1, 2, 3}, {4, 5, 6}}
+```
