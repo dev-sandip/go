@@ -173,3 +173,54 @@ And Two dimnesional array can be declared as :
 ```go
 numbers:=[2][3]int{{1, 2, 3}, {4, 5, 6}}
 ```
+
+
+
+# Slices
+- A slice is a dynamically-sized, flexible view into a portion of an underlying array.
+```go
+var numbers = []int{}
+```
+- Note : The length of the slice can be obtained using the len() function.
+```go
+len(numbers)
+```
+- Note : The capacity of the slice can be obtained using the cap() function.
+```go
+cap(numbers)
+```
+- Note : The elements of the slice can be accessed using the index of the element.
+```go
+numbers[0] = 10
+```
+- Note : The append() function is used to add elements to the slice.
+```go
+numbers = append(numbers, 5)
+```
+- Note: The make() function is used to create a slice with a specific capacity.
+```go
+numbers = make([]int, 5)
+```
+It takes three arguments: the first argument is the type of the slice, the second argument is the length of the slice, and the third argument is the capacity of the slice.
+
+- Note : The copy() function is used to copy elements from one slice to another.
+```go
+numbers2 := make([]int, len(numbers))  
+copy(numbers2, numbers) //destination, source   
+```
+Slice Operator:
+```go
+numbers := []int{1, 2, 3, 4, 5}
+numbers2 := numbers[0:3] //  return [1, 2, 3] excluding the last element ie 3rd index
+numbers3 := numbers[2:] //  return [3, 4, 5]
+numbers4 := numbers[:3] //  return [1, 2, 3]
+```
+Slice Package :
+```go
+import "golang.org/x/exp/slices"
+var num1 = []int{1, 2, 3}
+var num2 = []int{4, 5, 6}
+slices.Join(num1, num2)// returns [1, 2, 3, 4, 5, 6]
+slices.Equal(num1, num2)// returns  true or false
+slices.Clone(num1)// returns [1, 2, 3]
+```
