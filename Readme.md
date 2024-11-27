@@ -359,3 +359,62 @@ for index := range numbers {
     fmt.Println(index)
 }
 ```
+
+#Functions
+
+- A function is a block of code that performs a specific task. It has a name, a list of parameters, an optional return type, and a body.
+
+```go
+func add(a int, b int) int {
+    return a + b
+}
+```
+
+You can also define the return type after the closing parenthesis of the parameter list.
+
+```go
+func add(a int, b int) (result int) {
+    result = a + b
+    return
+}
+```
+
+A go function can return multiple values as :
+
+```go
+func swap(a, b int) (int, int) {
+    return b, a
+}
+```
+
+# Variadic Functions
+
+- A variadic function is a function that can accept a variable number of arguments.
+
+```go
+func sum(numbers ...int) int {
+    total := 0
+    for _, num := range numbers {
+        total += num
+    }
+    return total
+}
+```
+
+- You can pass any number of arguments to a variadic function.
+
+```go
+sum(1, 2, 3, 4, 5)
+```
+
+- Note : The variadic parameter must be the last parameter in the function signature.
+
+-Note: Using Interface in variadic function allows to pass any type of data as :
+
+```go
+func print(args ...interface{}) {
+    for _, arg := range args {
+        fmt.Println(arg)
+    }
+}
+```
