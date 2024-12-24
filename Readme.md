@@ -462,3 +462,31 @@ Dereference operator can be used to get the value of the pointer as :
 *p = 20
 fmt.Println(x) // Output: 20
 ```
+
+# Structs
+
+- A struct is a user-defined type that contains a collection of named fields/properties.
+
+```go
+type Person struct {
+    name string
+    age int
+    city string
+}
+```
+
+- User defined methods can be defined for the struct as :
+
+```go
+func (p Person) greet() {
+    fmt.Println("Hello, my name is", p.name)
+}
+```
+
+- Note : The receiver of the method is defined before the function name.
+
+```go
+p := Person{name: "John", age: 30, city: "New York"}
+p.greet() // Output: Hello, my name is John
+```
+
