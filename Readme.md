@@ -360,7 +360,7 @@ for index := range numbers {
 }
 ```
 
-#Functions
+# Functions
 
 - A function is a block of code that performs a specific task. It has a name, a list of parameters, an optional return type, and a body.
 
@@ -417,4 +417,48 @@ func print(args ...interface{}) {
         fmt.Println(arg)
     }
 }
+```
+
+# Closures
+
+- A closure is a function that captures the variables from the surrounding context in which it is defined.
+  In simple words, a closure is a function that returns a function.
+
+```go
+func add(a int) func(int) int {
+    return func(b int) int {
+        return a + b
+    }
+}
+```
+
+```go
+add5 := add(5)
+result := add5(10)
+fmt.Println(result) // Output: 15
+```
+
+Note: If the scope of the variable is only inside the return function then it will get destroyed after the function call. But if the variable is declared outside the return function then it will be available for the lifetime of that closure function.
+
+# Pointers
+
+- A pointer is a variable that stores the memory address of another variable.
+
+```go
+var x int = 10
+var p *int = &x
+```
+
+- Note : The & operator is used to get the memory address of a variable.
+- Note : The \* operator is used to get the value stored at the memory address.
+
+```go
+fmt.Println(*p) // Output: 10
+```
+
+Dereference operator can be used to get the value of the pointer as :
+
+```go
+*p = 20
+fmt.Println(x) // Output: 20
 ```
